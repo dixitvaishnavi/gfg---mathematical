@@ -1,0 +1,13 @@
+class Solution {
+    static int countSquares(int N) {
+        // code here
+          int i=1;
+       int c=0;
+       while(i*i<N)
+       {
+           i++;
+           c++;
+       }
+       return c;
+    }
+}
