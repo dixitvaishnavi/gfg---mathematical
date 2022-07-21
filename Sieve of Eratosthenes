@@ -1,0 +1,28 @@
+class Solution{
+    static ArrayList<Integer> sieveOfEratosthenes(int N){
+        // code here
+         ArrayList<Integer> list=new ArrayList<>();
+       int n=N;
+       boolean[] primes = new boolean[n + 1];
+       Arrays.fill(primes, true);
+       
+       for (int i = 2; i <= Math.sqrt(n); i++) 
+       {
+           if (primes[i]) 
+           {
+               for (int j = i * i; j <= n; j = j + i) 
+               {
+                   primes[j] = false;
+               }
+           }
+       }
+       for (int i = 2; i <= n; i++)
+       {
+           if (primes[i])
+           {
+              list.add(i);
+           }
+       }
+       return list;
+    }
+}
